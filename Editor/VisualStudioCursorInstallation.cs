@@ -240,7 +240,7 @@ namespace Microsoft.Unity.VisualStudio.Editor {
 				return;
 			}
 
-			File.WriteAllText(launchFile, DefaultLaunchFileContent);
+			// File.WriteAllText(launchFile, DefaultLaunchFileContent);
 		}
 
 		private static void PatchLaunchFile(string launchFile) {
@@ -341,7 +341,7 @@ namespace Microsoft.Unity.VisualStudio.Editor {
     ""dotnet.defaultSolution"": """ + IOPath.GetFileName(ProjectGenerator.SolutionFile()) + @"""
 }";
 
-			File.WriteAllText(settingsFile, content);
+			// File.WriteAllText(settingsFile, content);
 		}
 
 		private void PatchSettingsFile(string settingsFile) {
@@ -414,7 +414,7 @@ namespace Microsoft.Unity.VisualStudio.Editor {
 				return;
 			}
 
-			File.WriteAllText(extensionFile, DefaultRecommendedExtensionsContent);
+			// File.WriteAllText(extensionFile, DefaultRecommendedExtensionsContent);
 		}
 
 		private static void PatchRecommendedExtensionsFile(string extensionFile) {
@@ -441,11 +441,11 @@ namespace Microsoft.Unity.VisualStudio.Editor {
 		}
 
 		private static void WriteAllTextFromJObject(string file, JSONNode node) {
-			using (var fs = File.Open(file, FileMode.Create))
-			using (var sw = new StreamWriter(fs)) {
-				// Keep formatting/indent in sync with default contents
-				sw.Write(node.ToString(aIndent: 4));
-			}
+			// using (var fs = File.Open(file, FileMode.Create))
+			// using (var sw = new StreamWriter(fs)) {
+			// 	// Keep formatting/indent in sync with default contents
+			// 	sw.Write(node.ToString(aIndent: 4));
+			// }
 		}
 
 		public override bool Open(string path, int line, int column, string solution) {
